@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+
+.nav-div {
+  display: flex;
+  flex-direction: row;
+  background-color: #b68b80;
+  height: 2.8rem;
+}
+
+.nav-logo {
+  margin: 10px;
+  color: blue;
+}
+
+.nav-links {
+  display: flex;
+  margin-left: 40%;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-family: "Libre Baskerville", serif;
+}
+.nav-links :hover {
+  color: #69514a;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding-left: 50px;
+}
