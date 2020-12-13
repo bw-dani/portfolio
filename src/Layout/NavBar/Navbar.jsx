@@ -11,7 +11,7 @@ function Navbar(props) {
         <a href='/'>Home</a>
         <a href='/about-me'>About</a>
         <a href='/portfolio'>Portfolio</a>
-        <a>Contact</a>
+        <a href='/contact'>Contact</a>
       </div>
     </div>
   );
