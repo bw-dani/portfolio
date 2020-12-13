@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap");
+
+.span-hm-div {
+  background-image: url("../../images/background.jpg");
+  min-width: max-content;
+  min-height: 55vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.span-hm-div {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: start;
+  padding: 12%;
+  font-family: "Proza Libre", sans-serif;
+}
+
+.first-span {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #dda499;
+}
+.scn-span {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #afbce4;
+}
+.third-span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #98a3c3;
+}

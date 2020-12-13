@@ -9,8 +9,8 @@ function Navbar(props) {
       </div>
       <div className='nav-links'>
         <a href='/'>Home</a>
-        <a>About</a>
-        <a>Portfolio</a>
+        <a href='/about-me'>About</a>
+        <a href='/portfolio'>Portfolio</a>
         <a>Contact</a>
       </div>
     </div>

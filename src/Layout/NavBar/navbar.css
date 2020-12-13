@@ -3,7 +3,7 @@
 .nav-div {
   display: flex;
   flex-direction: row;
-  background-color: #b68b80;
+  background-color: #af6067;
   height: 2.8rem;
 }
 
@@ -14,13 +14,13 @@
 
 .nav-links {
   display: flex;
-  margin-left: 40%;
+  margin-left: 60%;
   margin-top: 10px;
   font-size: 1.2rem;
   font-family: "Libre Baskerville", serif;
 }
 .nav-links :hover {
-  color: #69514a;
+  color: #774045;
 }
 
 a {

@@ -1,15 +1,18 @@
 import React from 'react';
 import NavBar from '../../Layout/NavBar/Navbar'
+import './home.css'
 
 function Home(props) {
   return (
-    <div>
+    <div >
       <NavBar />
-        <div>
-          <span>Hi, my name is </span>
-          <span>DANIELLE BROADWATER.</span>
-          <span>And I am a JUNIOR SOFTWARE ENGINEER</span>
-        </div>
+       <div className='span-hm-div'>
+        <span className='first-span'>Hi, my name is </span> 
+        <br/>
+        <span className='scn-span'>DANIELLE BROADWATER,</span>
+        <br/>
+        <span className='third-span'>I am a JUNIOR SOFTWARE ENGINEER and I build things for the web.</span>
+       </div>
     </div>
   );
 }
