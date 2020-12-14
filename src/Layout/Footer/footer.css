@@ -1,0 +1,12 @@
+.footer-div {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #b68b8028;
+  padding-top: 2vh;
+}
+
+.icons {
+  margin-bottom: 0.5%;
+}

@@ -1,6 +1,7 @@
 
 
 import React from "react";
+import Footer from "../../Layout/Footer/Footer";
 import './contact.css'
 
 export default class MyForm extends React.Component {
@@ -46,6 +47,7 @@ export default class MyForm extends React.Component {
         {status === "ERROR" && <p className='cfm-txt'>Ooops! There was an error.</p>}
           </div>
         </form>
+        <Footer/>
       </div>
     );
   }

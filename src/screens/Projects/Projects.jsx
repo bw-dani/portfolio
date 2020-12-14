@@ -5,6 +5,7 @@ import P1 from '../../images/P1.png'
 import P2 from '../../images/P2.png'
 import P3 from '../../images/P3.png'
 import P4 from '../../images/P4.png'
+import Footer from '../../Layout/Footer/Footer';
 
 
 function Projects(props) {
@@ -54,8 +55,10 @@ function Projects(props) {
           </a>
           <h5> <a href='https://github.com/bw-dani/tackle-it' target="_blank">  GitHub link</a></h5>
         </div>
-        
+     
+       
       </div>
+     
     </div>
   );
 }

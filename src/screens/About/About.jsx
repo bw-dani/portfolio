@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../../Layout/NavBar/Navbar';
 import './about.css'
 import ArrowRightOutlinedIcon from '../../../node_modules/@material-ui/icons/ArrowRightOutlined';
+import Footer from '../../Layout/Footer/Footer';
 
 
 function About(props) {
@@ -50,9 +51,11 @@ function About(props) {
           <div className='tech-list'>
             <ArrowRightOutlinedIcon className='icon' fontSize='large'/><span>Git/Github</span>
          </div>
+        </div> 
         </div>
-        </div>
-     </div>
+      
+      </div>
+      <Footer/>
     </div>
   );
 }
