@@ -1,78 +1,71 @@
-import React, { Component } from 'react';
-import Navbar from '../../Layout/NavBar/Navbar'
-import axios from 'axios'
 
-class Contact extends React.Component {
-  constructor() {
-    super();
+
+import React from "react";
+import './contact.css'
+
+export default class MyForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.submitForm = this.submitForm.bind(this);
     this.state = {
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    }
+      status: ""
+    };
   }
 
-
-  
-
   render() {
+    const { status } = this.state;
     return (
-      <div>
-        <div>
-      <Navbar/>
-      <div>
-        <h1>Contact Me:</h1>
-        <form id='contact-form' onSubmit={this.submitEmail.bind(this)} method="POST">
-          <div className='form-group'>
-            <input placeholder="Name" id='name' type='text' className='form-control'
-              required value={this.state.name} onChange={this.onNameChange.bind(this)} />
-            <input placeholder='Email' id='email' type='email' className='form-control'
-              aria-describedby='emailHelp' required value={this.state.email} onChange={this.onEmailChange.bind(this)}/>
-            <input placeholder='Subject' id='subject' type='text' className='form-control'
-              required value={this.state.subject} onChange={this.onSubjectChange.bind(this)} />
-            <textarea placeholder="Message" id='message' className='form-control'
-              rows='1' required value={this.state.message} onChange={this.onMsgChange.bind(this)}/>
+      <div className='contact-div'>
+        
+      <form
+       className='contact-form'
+        onSubmit={this.submitForm}
+        action="https://formspree.io/f/mdopwpyj"
+        method="POST"
+        >
+          <h1>Contact me:</h1>
+          <div className='form-input'>
+          <label>FULL NAME:</label>
+            <input type='text' name='name' />
           </div>
-          <button type='submit' className='submit-btn'>Submit</button>
+          <div className='form-input'>
+        <label>EMAIL ADDRESS:</label>
+            <input type="email" name="email" />
+          </div>
+          <div className='message-input'>
+        <label>YOUR MESSAGE:</label>
+            <textarea
+              className='message-box-input'
+              type="text"
+              rows='5'
+              cols='40'
+              name="message"></textarea>
+          </div>
+          <div className='btn'>
+        {status === "SUCCESS" ? <p className='cfm-txt'>Thanks!</p> : <button className='btn-form'>Submit</button>}
+        {status === "ERROR" && <p className='cfm-txt'>Ooops! There was an error.</p>}
+          </div>
         </form>
-      </div>
-    </div>
       </div>
     );
   }
 
-  onNameChange(e) {
-    this.setState({name: e.target.value})
-  };
-onEmailChange(e) {
-    this.setState({email: e.target.value})
+  submitForm(ev) {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        this.setState({ status: "SUCCESS" });
+      } else {
+        this.setState({ status: "ERROR" });
+      }
+    };
+    xhr.send(data);
+  }
 }
-onSubjectChange(e) {
-    this.setState({subject: e.target.value})
-}
-onMsgChange(e) {
-    this.setState({message: e.target.value})
-}
-  
-submitEmail(e){
-  e.preventDefault();
-  axios({
-    method: "POST", 
-    url:"http://localhost:3002/send", 
-    data:  this.state
-  }).then((response)=>{
-    if (response.data.status === 'success'){
-        alert("Message Sent."); 
-        this.resetForm()
-    }else if(response.data.status === 'fail'){
-        alert("Message failed to send.")
-    }
-  })
-}
-resetForm(){
-  this.setState({name: '', email: '',subject:'', message: ''})
-}
-}
-
-export default Contact;

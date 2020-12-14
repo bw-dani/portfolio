@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap");
+
+.contact-div {
+  background-color: rgb(14, 7, 22);
+  min-width: max-content;
+  height: 100vh;
+}
+
+.contact-form {
+  font-family: "Proza Libre", sans-serif;
+  padding-top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #dda499;
+}
+
+input {
+  height: 4vh;
+  font-family: "Proza Libre", sans-serif;
+  color: #dda499;
+  border-radius: 15px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  text-align: start;
+  padding-top: 3%;
+  font-family: "Proza Libre", sans-serif;
+}
+
+.message-input {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  padding-top: 3%;
+  text-align: start;
+}
+
+.message-box-input {
+  height: 15vh;
+  border-radius: 15px;
+}
+
+.btn {
+  padding-top: 5%;
+}
+
+.btn-form {
+  height: 6vh;
+  width: 8vw;
+  background-color: #dda499;
+  font-family: "Proza Libre", sans-serif;
+  font-weight: 900;
+  color: aliceblue;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.cfm-txt {
+  font-size: 20px;
+}
