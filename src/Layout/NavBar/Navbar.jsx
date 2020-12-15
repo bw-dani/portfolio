@@ -1,11 +1,12 @@
 import React from 'react';
+import DbLogo from '../../images/logo.png'
 import './navbar.css'
 
 function Navbar(props) {
   return (
     <div className='nav-div'>
+      <img src={DbLogo} alt="" height='50px' />
       <div className='nav-logo'>
-        <span>DB</span>
       </div>
       <div className='nav-links'>
         <a href='/'>Home</a>
