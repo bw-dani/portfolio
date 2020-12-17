@@ -2,7 +2,7 @@
 
 .span-hm-div {
   background-image: url("../../images/background.jpg");
-  min-width: max-content;
+  min-width: min-content;
   min-height: 55vh;
   background-repeat: no-repeat;
   background-size: cover;

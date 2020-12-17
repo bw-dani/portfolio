@@ -11,10 +11,10 @@ function About(props) {
       <Navbar/>
       <div className='about-div'>
         <h1 className='abt-title'>About me:</h1>
-        <span className='about-span'>Hello! I'm Danielle, a junior software engineer based in Austin, TX. <br/>
+        <span className='about-span'>Hello! I'm Danielle, a Junior Software Engineer based in Austin, TX. <br/>
         I enjoy creating things that live on the internet, whether that be websites, applications,<br/>
-        or anything in between. My goal is to always build products with impact people's life.<br/>
-        I recently earned my certificate from General Assembly, since then i continue to build my own and freelance projects as well.
+        or anything in between. My goal is to always build products that impact people's life.<br/>
+        I recently earned my certificate from General Assembly, since then I continue to build my own and freelance projects as well.
         </span>
         <h2 className='abt-title'> Here are a few technologies I've been working with recently:</h2>
         <div className='whole-list'>
