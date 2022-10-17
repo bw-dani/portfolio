@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from '../../Layout/NavBar/Navbar';
-import './about.css'
+import Navbar from '../../components/NavBar/Navbar';
+import './about.scss'
 import ArrowRightOutlinedIcon from '../../../node_modules/@material-ui/icons/ArrowRightOutlined';
-import Footer from '../../Layout/Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 
 
 function About(props) {

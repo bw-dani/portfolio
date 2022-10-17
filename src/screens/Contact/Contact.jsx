@@ -1,8 +1,8 @@
 
 
 import React from "react";
-import Footer from "../../Layout/Footer/Footer";
-import './contact.css'
+import Footer from "../../components/Footer/Footer";
+import './contact.scss'
 
 export default class MyForm extends React.Component {
   constructor(props) {

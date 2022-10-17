@@ -1,6 +1,6 @@
 import React from 'react';
 import DbLogo from '../../images/logo.png'
-import './navbar.css'
+import './navbar.scss'
 
 function Navbar(props) {
   return (

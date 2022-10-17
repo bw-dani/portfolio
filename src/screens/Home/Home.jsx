@@ -1,7 +1,7 @@
 import React from 'react';
 
-import NavBar from '../../Layout/NavBar/Navbar'
-import './home.css'
+import NavBar from '../../components/NavBar/Navbar'
+import './home.scss'
 
 function Home(props) {
   return (

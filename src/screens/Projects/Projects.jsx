@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../../Layout/NavBar/Navbar';
-import './projects.css'
+import Navbar from '../../components/NavBar/Navbar';
+import './projects.scss'
 import P1 from '../../images/P1.png'
 import P2 from '../../images/P2.png'
 import P3 from '../../images/P3.png'
