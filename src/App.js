@@ -1,35 +1,28 @@
-import { Switch, Route} from 'react-router-dom'
+import { React } from 'react';
+import { Routes, Route } from 'react-router-dom'
 import Home from './screens/Home/Home'
 import About from './screens/About/About'
 import Projects from './screens/Projects/Projects';
 import Contact from './screens/Contact/Contact'
 import Navbar from './components/NavBar/Navbar';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
   return (
     <div className="App">
-      <Switch>
-           <Route exact path='/'>
-              <Home/>
-           </Route>
-        
-        <Route path='/about-me'>
-          <About />
-      
-           </Route>
-        
-        <Route path='/portfolio'>
-          <Projects />
-         
-        </Route>
-        
-        <Route path='/contact'>
-          <Navbar/>
-          <Contact/>
-           </Route>
 
-      </Switch>
+      <Navbar />
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/projects' element={<Projects />} />
+        <Route path='/contact' element={<Contact />} />
+      </Routes>
+
+      <Footer />
+
     </div>
   );
 }

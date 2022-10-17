@@ -1,23 +1,16 @@
 import React from 'react';
-import DbLogo from '../../images/logo.png'
+import { Link } from 'react-router-dom';
 import './navbar.scss'
 
-function Navbar(props) {
+export default function Navbar(props) {
   return (
-    <div className='nav-div'>
-      <img src={DbLogo} alt="" height='50px' />
-      <div className='nav-logo'>
-      </div>
-      <div className="nav-l-div">
-      <div className='nav-links'>
-        <a href='/'>Home</a>
-        <a href='/about-me'>About</a>
-        <a href='/portfolio'>Portfolio</a>
-        <a href='/contact'>Contact</a>
-        </div>
+    <div className='navbar-main-div'>
+      <div className='navbar-links'>
+        <Link to='/'>Home</Link>
+        <Link to='/about'>About</Link>
+        <Link to='/projects'>Projects</Link>
+        <Link to='/contact'>Contact</Link>
       </div>
     </div>
   );
 }
-
-export default Navbar;

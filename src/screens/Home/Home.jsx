@@ -1,22 +1,11 @@
 import React from 'react';
-
-import NavBar from '../../components/NavBar/Navbar'
 import './home.scss'
 
-function Home(props) {
+
+export default function Home(props) {
   return (
-    <div >
-      <NavBar />
-       <div className='span-hm-div'>
-        <span className='first-span'>Hi, my name is </span> 
-        <br/>
-        <span className='scn-span'>DANIELLE BROADWATER,</span>
-        <br/>
-        <span className='third-span'>I am a JUNIOR SOFTWARE ENGINEER and I build things for the web.</span>
-      </div>
-     
+    <div className='home-main-div'>
+      <h1 className='home-title'>Home</h1>
     </div>
   );
 }
-
-export default Home;
