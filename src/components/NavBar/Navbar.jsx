@@ -8,7 +8,7 @@ export default function Navbar(props) {
       <div className='navbar-container'>
 
         <div className='navbar-logo'>
-          <Link to='home' smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+          <Link to='header' smooth={true} duration={500} spy={true} exact='true' offset={-80}>
             <h1>Home</h1>
           </Link>
         </div>
