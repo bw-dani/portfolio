@@ -2,9 +2,8 @@ import React from 'react';
 import './projects.scss'
 
 export default function Projects(props) {
-
   return (
-    <div className='project-main-div'>
+    <div className='projects'>
       <h1 className='project-title'>Projects</h1>
     </div>
   );

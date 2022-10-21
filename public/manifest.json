@@ -11,21 +11,6 @@
       "src": "img/favicon48.png",
       "type": "image/png",
       "sizes": "48x48"
-    },
-    {
-      "src": "img/favicon167.png",
-      "type": "image/png",
-      "sizes": "167x167"
-    },
-    {
-      "src": "img/favicon180.png",
-      "type": "image/png",
-      "sizes": "180x180"
-    },
-    {
-      "src": "img/favicon192.png",
-      "type": "image/png",
-      "sizes": "192x192"
     }
   ],
   "start_url": ".",

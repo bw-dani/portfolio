@@ -1,0 +1,23 @@
+.header{
+  height: 100vh;
+  background-image: url('./3.jpeg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  .header-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+  }
+}
+
+
+//Light Theme
+.light {
+  .header {
+    background-image: url('./4.jpeg');
+    .header-title {
+      color: blue;
+      font-size: 40px;
+    }
+  }
+}
