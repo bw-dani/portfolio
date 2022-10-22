@@ -23,7 +23,7 @@ export default function Header(props) {
   return (
     <div className='header'>
       <div className='header-content' ref={headerContent}>
-        <span className='header-span'>Front End</span>
+        <span className='header-span'>Front End, Creative</span>
         <h1 className='header-title'>DEVELOPER</h1>
         <p className='header-subtitle'>I build websites and web applications based in Austin, TX. I love modern and interactive content!</p>
       </div>
