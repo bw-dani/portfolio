@@ -1,8 +1,30 @@
 @import './reset.scss';
 @import './variables.scss';
 
+@font-face {
+  font-family: 'Ground Castle';
+  src: url('../Fonts/Groundcastle.otf') format('opentype');
+
+}
+
+@font-face {
+  font-family: 'Maghfirea';
+  src: url('../Fonts/Maghfirea.otf') format('opentype');
+
+}
+
+h1 {
+  font-family: 'Ground Castle';
+  font-size: 40px;
+}
+p,a {
+  font-family: 'Maghfirea';
+  font-size: 20px;
+}
+
 .toggle {
   position: sticky;
   bottom: 10px;
   margin-left: 10px;
+  z-index: 5;
 }

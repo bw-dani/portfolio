@@ -1,4 +1,22 @@
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
+  z-index: 5;
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(255, 255, 255, 0.706);
+    .navbar-home {
+      font-size: 20px;
+    }
+    .navbar-links {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+    }
+  }
 }
