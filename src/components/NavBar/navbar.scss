@@ -9,14 +9,16 @@
     align-items: center;
     height: 40px;
     padding: 0 20px;
-    background-color: rgba(255, 255, 255, 0.706);
+    background: linear-gradient(to bottom, rgba(9, 9, 9, 0.706), rgba(0, 0, 0, 0.261));
     .navbar-home {
       font-size: 20px;
+      color: #fff;
     }
     .navbar-links {
       display: flex;
       justify-content: space-around;
       width: 50%;
+      color: #fff;
     }
   }
 }

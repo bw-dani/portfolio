@@ -1,4 +1,22 @@
+.root {
+  //add a transition to the body as you scroll down the page
+  transition: background-color 0.5s ease-in-out;
+  //add a background color to the body
+  background-color: rgb(7, 7, 8);
+  @keyframes background-color {
+    0% {
+      background-color: rgb(7, 7, 8);
+    }
+    50% {
+      background-color: rgb(7, 7, 8);
+    }
+    100% {
+      background-color: rgb(7, 7, 8);
+    }
+  }
 
+  
+}
 .light {
   color: rgb(7, 7, 8);
 }

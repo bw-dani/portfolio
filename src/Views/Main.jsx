@@ -28,7 +28,7 @@ export default function Main(props) {
   return (
     <>
       <Navbar />
-      <Header  />
+      <Header />
       <About />
       <Projects />
       <Contact />

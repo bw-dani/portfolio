@@ -1,23 +1,49 @@
+@import "/src/styles/variables.scss";
+
 .header {
   height: 100vh;
-  background-image: url("./img/dark.jpeg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-attachment: fixed;
-  .overlay {
+  background-color: $space-cadet;
+  &::before {
+    content: "";
     position: absolute;
-    background-image: url("./img/dark-trees.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    z-index: 1;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 20%;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(15, 14, 14, 0.747) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    z-index: 1;
+    background: linear-gradient(
+      0deg,
+      rgb(15, 14, 14) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  canvas {
+    position: absolute;
+    z-index: 2;
+    // max-width: 50%;
+    // max-height: 50%;
+    // top: 50%;
   }
   .header-content {
-    margin: 13% 0 0 0;
+    margin: 20% 0 0 0;
+    color: #fff;
     .header-span {
       font-size: 2rem;
       font-weight: 700;
@@ -25,17 +51,22 @@
       text-transform: uppercase;
       letter-spacing: 0.5rem;
       margin-bottom: 1rem;
+      text-indent: 9px;
+      &::before{
+        content: "Front End,";
+        animation: switch 3s ease-in-out infinite;
+      }
     }
     .header-title {
       display: block;
       font-size: 20vh;
       font-weight: 600;
-      color: #000;
+      letter-spacing: 6px;
     }
     .header-subtitle {
       text-align: center;
       font-weight: 600;
-      color: #000;
+      letter-spacing: 2px;
       z-index: 3;
     }
   }
@@ -44,12 +75,22 @@
 //Light Theme
 .light {
   .header {
-    background-image: url("./img/light.jpeg");
-    .overlay {
-      background-image: url("./img/light-trees.png");
+    background-color: $heliotrope-gray;
+    .header-content {
+      color: #000;
     }
-    .header-title {
-      color: rgb(42, 0, 50);
-    }
+  }
+}
+
+
+@keyframes switch {
+  0% {
+    content: "Front End,";
+  }
+  50% {
+    content: "Creative,";
+  }
+  100% {
+    content: "Curious,";
   }
 }
