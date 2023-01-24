@@ -36,14 +36,13 @@
   }
   canvas {
     position: absolute;
-    z-index: 2;
-    // max-width: 50%;
-    // max-height: 50%;
-    // top: 50%;
+    z-index: 1;
   }
   .header-content {
     margin: 20% 0 0 0;
     color: #fff;
+    z-index: 2;
+    user-select: none;
     .header-span {
       font-size: 2rem;
       font-weight: 700;
