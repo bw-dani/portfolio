@@ -9,7 +9,7 @@ export default function Navbar(props) {
 
         <div className='navbar-home'>
           <Link to='header' smooth={true} duration={500} spy={true} exact='true' offset={-40}>
-            Hi, I'm Dani!
+            Dani Broadwater
           </Link>
         </div>
 

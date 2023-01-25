@@ -14,9 +14,17 @@
       background-color: rgb(7, 7, 8);
     }
   }
-
   
 }
+
+  .panel {
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+  }
+  
 .light {
   color: rgb(7, 7, 8);
 }
