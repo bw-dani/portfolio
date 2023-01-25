@@ -19,6 +19,14 @@
       justify-content: space-around;
       width: 50%;
       color: #fff;
+      // pointer 
+      a {
+        // chage to pointer
+        cursor: pointer;
+        &.active {
+          text-decoration: line-through;
+        }
+      }
     }
   }
 }

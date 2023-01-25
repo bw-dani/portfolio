@@ -1,8 +1,61 @@
+@import "/src/styles/variables.scss";
+
 .contact {
-  background-color: green;
+  background-color: #000;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
   .contact-title {
-    padding-top: 80px;
     font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .contact-text {
+    padding: 0 30% 50px 30%;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  .contact-btn {
+    margin-top: 30px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: #000;
+      font-size: 1.7rem;
+      color: $rose-dust;
+      font-family: 'Ground Castle';
+      text-decoration: line-through;
+    }
+  }
+  .footer {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      img {
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+        &:hover {
+          svg {
+            fill: $rose-dust;
+            path {
+              fill: $rose-dust;
+            }
+          }
+        }
+      }
+    }
   }
 }
