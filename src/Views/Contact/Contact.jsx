@@ -1,9 +1,6 @@
 import React from "react";
 import "./contact.scss";
 
-import LinkedIn from "./assets/linkedIn.svg";
-import GitHub from "./assets/github.svg";
-
 export default function Contact(props) {
   return (
     <div className="contact panel">
@@ -15,11 +12,8 @@ export default function Contact(props) {
         </a>
       <div className="footer">
         <div className="icons">
-          <a href="https://www.linkedin.com/in/dani-broadwater/" target="_blank" rel="noopener noreferrer">
-            <img src={LinkedIn} alt="LinkedIn" />
-          </a>
-          <a href="https://github.com/bw-dani" target="_blank" rel="noopener noreferrer">
-            <img src={GitHub} alt="GitHub" />
+            <a href="https://www.linkedin.com/in/dani-broadwater/" target="_blank" rel="noopener noreferrer"><div className="linkedin"></div></a>
+            <a href="https://github.com/bw-dani" target="_blank" rel="noopener noreferrer"><div className="github"></div>
           </a>
         </div>
         <p className="footer-text">Dani Broadwater © 2020</p>

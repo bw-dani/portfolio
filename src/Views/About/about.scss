@@ -1,8 +1,16 @@
+@import "/src/styles/variables.scss";
+
 .about {
+  position: relative;
   background: #000;
-  height:100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    height: unset;
+    padding-bottom: 30%;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -10,36 +18,45 @@
     left: 0;
     width: 100%;
     height: 20%;
-    background: linear-gradient(
-      180deg,
-      rgba(15, 14, 14) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient( 180deg, rgba(15, 14, 14) 0%, rgba(255, 255, 255, 0) 100%);
   }
   .about-info {
     max-width: 90%;
-    .title{
+    @media (max-width: $breakpoint-tablet) {
+      max-width: 100%;
+      padding: 35% 0 10% 0;
+    }
+    .title {
       font-size: 3rem;
       color: #fff;
       transform: translateY(-90%);
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 2rem;
+      }
     }
     .text {
       max-width: 60%;
       color: #fff;
       text-align: left;
-      font-family: 'ground castle';
+      font-family: "ground castle";
       font-size: 1.5rem;
       letter-spacing: 1px;
+      @media (max-width: $breakpoint-tablet) {
+        max-width: 100%;
+        font-size: 1.2rem;
+      }
       a {
         font-size: 1.5rem;
         color: #fff;
         text-decoration: underline;
+        @media (max-width: $breakpoint-tablet) {
+          font-size: 1rem;
+        }
         &:hover {
           text-decoration: line-through;
         }
       }
     }
-
   }
   .about-image {
     position: absolute;
@@ -47,34 +64,80 @@
     top: 30%;
     max-width: 300px;
     max-height: 400px;
-    // margin: 0 auto;
+    @media (max-width: $breakpoint-tablet) {
+      position: relative;
+      right: -45%;
+      top: 10%;
+    }
     img {
       border: 1px solid #fff;
       border-radius: 50%;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      @media (max-width: $breakpoint-tablet) {
+        max-width: 200px;
+        max-height: 200px;
+      }
     }
     .about-image-text {
       transform: translate(-55%, 50%);
-      &.glow {
+      &.shake {
         animation: shake 0.5s ease-in-out infinite;
-        img {
-          animation:  blink 0.5s ease-in-out infinite;
+        svg {
+          animation: blink 0.5s ease-in-out infinite;
         }
       }
       .text {
         color: #fff;
       }
-      img {
+      svg {
         position: absolute;
-        right: 0;
-        width: 50px;
-        height: 50px;
-        margin: 0 10px;
-        border: none;
-        border-radius: 0;
+        right: -15px;
         object-fit: contain;
+      }
+    }
+  }
+}
+
+.light {
+  .about {
+    background: #fff;
+    &::before {
+      background: #fff;
+      @media (max-width: $breakpoint-tablet) {
+        background: none;
+      }
+    }
+    &::after {
+      background: #fff;
+    }
+    .about-info {
+      .title {
+        color: #000;
+      }
+      .text {
+        color: #000;
+        a {
+          color: #000;
+        }
+      }
+    }
+    .about-image {
+      a {
+        img {
+          border: 1px solid #000;
+        }
+      }
+      .about-image-text {
+        .text {
+          color: #000;
+        }
+        svg {
+          path {
+            stroke: #000;
+          }
+        }
       }
     }
   }

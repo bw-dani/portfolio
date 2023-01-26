@@ -1,7 +1,9 @@
 @import "/src/styles/variables.scss";
 
 .header {
+  position: relative;
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,6 +45,10 @@
     color: #fff;
     z-index: 2;
     user-select: none;
+    @media (max-width: $breakpoint-tablet) {
+      text-align: center;
+      margin-top: 50%;
+    }
     .header-span {
       font-size: 2rem;
       font-weight: 700;
@@ -51,6 +57,10 @@
       letter-spacing: 0.5rem;
       margin-bottom: 1rem;
       text-indent: 9px;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: calc(1rem - 1vw);
+        letter-spacing: 0.3rem;
+      }
       &::before{
         content: "Front End,";
         animation: switch 3s ease-in-out infinite;
@@ -58,15 +68,25 @@
     }
     .header-title {
       display: block;
-      font-size: 20vh;
+      font-size: 12rem;
       font-weight: 600;
       letter-spacing: 6px;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: calc(7rem - 2vw);
+      }
+      @media (max-width: $breakpoint-mobile) {
+        font-size: calc(3rem - 2vw);
+      }
     }
     .header-subtitle {
       text-align: center;
       font-weight: 600;
       letter-spacing: 2px;
       z-index: 3;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: calc(1.5rem - 1vw);
+        padding: 0 10%;
+      }
     }
   }
 }
@@ -75,6 +95,20 @@
 .light {
   .header {
     background-color: $heliotrope-gray;
+    &::before {
+      background: linear-gradient(
+        180deg,
+        rgba(252, 251, 251, 0.226) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+    &::after {
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.885) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
     .header-content {
       color: #000;
     }

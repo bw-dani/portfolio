@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { ThemeContext, themes } from './Theme';
+import { useState, useEffect } from "react";
+import { ThemeContext, themes } from "./Theme";
 
 export default function Wrapper(props) {
   const [theme, setTheme] = useState(themes.dark);
@@ -9,12 +9,12 @@ export default function Wrapper(props) {
   }
   useEffect(() => {
     switch (theme) {
-      case themes.light:  
-        document.body.classList.add('light');
+      case themes.light:
+        document.body.classList.add("light");
         break;
       case themes.dark:
       default:
-        document.body.classList.remove('light');
+        document.body.classList.remove("light");
         break;
     }
   }, [theme]);

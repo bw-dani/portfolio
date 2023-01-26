@@ -1,3 +1,5 @@
+@import "/src/styles/variables.scss";
+
 .navbar {
   position: fixed;
   top: 0;
@@ -11,20 +13,79 @@
     padding: 0 20px;
     background: linear-gradient(to bottom, rgba(9, 9, 9, 0.706), rgba(0, 0, 0, 0.261));
     .navbar-home {
-      font-size: 20px;
       color: #fff;
     }
     .navbar-links {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       width: 50%;
       color: #fff;
-      // pointer 
-      a {
-        // chage to pointer
-        cursor: pointer;
+      @media (max-width: $breakpoint-mobile) {
         &.active {
-          text-decoration: line-through;
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 40px;
+          right: 0;
+          width: 100%;
+          background: linear-gradient( to bottom, rgba(9, 9, 9, 0.706), rgba(0, 0, 0, 0.261));
+          a {
+            display: block;
+            text-align: center;
+            padding: 10px 0;
+          }
+        }
+      }
+      a {
+        cursor: pointer;
+        @media (max-width: $breakpoint-mobile) {
+          display: none;
+        }
+      }
+    }
+    .navbar-toggle {
+      display: none;
+      @media (max-width: $breakpoint-mobile) {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        padding: 0 20px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        .bar {
+          width: 25px;
+          height: 3px;
+          background-color: #fff;
+          margin: 3px 0;
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+}
+
+.light {
+  .navbar {
+    .navbar-container {
+      background: linear-gradient( to bottom, rgba(255, 255, 255, 0.399), rgba(255, 255, 255, 0.109));
+      .navbar-home {
+        color: #000;
+      }
+      .navbar-links {
+        color: #000;
+        @media (max-width: $breakpoint-mobile) {
+          &.active {
+            background: linear-gradient( to bottom, rgba(255, 255, 255, 0.399), rgba(255, 255, 255, 0.109));
+          }
+        }
+      }
+      .navbar-toggle {
+        .bar {
+          background-color: #000;
         }
       }
     }

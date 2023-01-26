@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navbar from '../components/NavBar/Navbar'
@@ -12,24 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Main(props) {
 
-  useEffect(() => {
-    gsap.utils.toArray('.panel').forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: 'top',
-        pin: true,
-        pinSpacing: false
-      });
-    });
-  }, [])
-
-  // fix scroll trigger bug 
-  useEffect(() => {
-    ScrollTrigger.refresh();
-    ScrollTrigger.update();
-  }, [])
-
-
+  
   return (
     <>
       <Navbar  />

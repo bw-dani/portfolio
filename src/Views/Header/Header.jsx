@@ -23,14 +23,18 @@ export default function Header(props) {
         scrub: true,
         pin: true,
         pinSpacing: false,
-        // markers: true
       },
     });
   }, []);
 
   useEffect(() => {
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -39,6 +43,8 @@ export default function Header(props) {
     renderer.shadowMap.enabled = true;
 
     containerRef.current.appendChild(renderer.domElement);
+
+    // Lights
     const pmremGenerator = new THREE.PMREMGenerator(renderer);
     pmremGenerator.compileEquirectangularShader();
     const envMap = pmremGenerator.fromScene(new RoomEnvironment()).texture;
@@ -46,6 +52,13 @@ export default function Header(props) {
     pmremGenerator.dispose();
 
     camera.position.y = 60;
+
+    //make scene responsive
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
@@ -58,15 +71,26 @@ export default function Header(props) {
 
     const loader = new GLTFLoader();
     loader.load(model, (gltf) => {
-
       // Shaders and materials
-      const iridescenceShader = gltf.parser.json.materials[0].extensions.KHR_materials_iridescence;
-      const clearCoatShader = gltf.parser.json.materials[0].extensions.KHR_materials_clearcoat;
+      const iridescenceShader =
+        gltf.parser.json.materials[0].extensions.KHR_materials_iridescence;
+      const clearCoatShader =
+        gltf.parser.json.materials[0].extensions.KHR_materials_clearcoat;
       const emissiveShader = gltf.parser.json.materials[0].emissiveFactor;
-      const pbrMetallicRoughness = gltf.parser.json.materials[0].pbrMetallicRoughness;
+      const pbrMetallicRoughness =
+        gltf.parser.json.materials[0].pbrMetallicRoughness;
+      
+      // Scale the model on mobile
+      if (window.innerWidth < 768) {
+        gltf.scene.scale.set(1, 1, 1);
+      } else {
+        gltf.scene.scale.set(2.5, 2.5, 2.5);
+      }
 
       gltf.scene.traverse((child) => {
         gltf.scene.scale.set(2.5, 2.5, 2.5);
+
+        // Set the material
         gltf.material = new MeshPhysicalMaterial({
           color: new THREE.Color(pbrMetallicRoughness.baseColorFactor),
           metalness: pbrMetallicRoughness.metallicFactor,
@@ -101,7 +125,8 @@ export default function Header(props) {
         let currentPosition = initialRotation;
 
         window.addEventListener("scroll", () => {
-          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+          const scrollTop =
+            window.scrollY || document.documentElement.scrollTop;
           if (scrollTop > lastScrollTop) {
             currentPosition -= 0.035;
             gltf.scene.rotation.x = currentPosition;
@@ -118,15 +143,38 @@ export default function Header(props) {
           }
         });
 
+        // Set to each child of the scene
         if (child.isMesh) {
           child.castShadow = true;
           child.receiveShadow = false;
           child.layers.enableAll();
+
+          // animations and mixer from gltf
           child.animations = gltf.animations;
           child.mixer = new THREE.AnimationMixer(child);
           child.mixer.clipAction(child.animations[0]).play();
+
+          // Change color on theme change
+          const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+              if (mutation.type === "attributes") {
+                const light = document
+                  .querySelector("body")
+                  .classList.contains("light");
+                if (light) {
+                  child.material.color = new THREE.Color(0xffffff);
+                } else {
+                  child.material.color = new THREE.Color(0x000000);
+                }
+              }
+            });
+          });
+          observer.observe(document.querySelector("body"), {
+            attributes: true,
+          });
         }
       });
+
       scene.add(gltf.scene);
     });
 
@@ -141,6 +189,7 @@ export default function Header(props) {
     };
     render();
   }, []);
+
 
   return (
     <div className="header" ref={containerRef}>

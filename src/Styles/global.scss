@@ -1,30 +1,72 @@
-@import './reset.scss';
-@import './variables.scss';
+@import "./reset.scss";
+@import "./variables.scss";
 
 @font-face {
-  font-family: 'Ground Castle';
-  src: url('../Fonts/Groundcastle.otf') format('opentype');
-
+  font-family: "Ground Castle";
+  src: url("../Fonts/Groundcastle.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'Maghfirea';
-  src: url('../Fonts/Maghfirea.otf') format('opentype');
-
+  font-family: "Maghfirea";
+  src: url("../Fonts/Maghfirea.otf") format("opentype");
 }
 
 h1 {
-  font-family: 'Ground Castle';
+  font-family: "Ground Castle";
   font-size: 4rem;
 }
-p,a {
-  font-family: 'Maghfirea';
+p,
+a {
+  font-family: "Maghfirea";
   font-size: 1.3rem;
 }
 
-.toggle {
-  position: sticky;
-  bottom: 10px;
-  margin-left: 10px;
+.toggle-switch {
+  position: fixed;
+  bottom: 2%;
+  left: 2%;
   z-index: 5;
+  width: 200px;
+  @media (max-width: $breakpoint-tablet) {
+    bottom: 5%;
+  }
+  label {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    background-color: #28292c;
+    border-radius: 50px;
+    cursor: pointer;
+    input {
+      position: absolute;
+      display: none;
+      &:checked ~ .slider {
+        background-color: #d8dbe0;
+      }
+      &:checked ~ .slider:before {
+        transform: translateX(27px);
+        background-color: #28292c;
+        box-shadow: none;
+      }
+    }
+    .slider {
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 50px;
+      transition: 0.4s;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 3px;
+        width: 18px;
+        height: 16px;
+        border-radius: 50%;
+        box-shadow: inset 9px 0 4px -1px #d8dbe0;
+        background-color: #28292c;
+        transition: 0.3s;
+      }
+    }
+  }
 }
