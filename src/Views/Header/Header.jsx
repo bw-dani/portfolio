@@ -16,15 +16,17 @@ export default function Header(props) {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    gsap.to(headerContent.current, {
-      scrollTrigger: {
-        trigger: headerContent.current,
-        start: "top top",
-        scrub: true,
-        pin: true,
-        pinSpacing: false,
-      },
-    });
+    if (window.innerWidth > 768) {
+      gsap.to(headerContent.current, {
+        scrollTrigger: {
+          trigger: headerContent.current,
+          start: "top top",
+          scrub: true,
+          pin: true,
+          pinSpacing: false,
+        },
+      });
+    }
   }, []);
 
   useEffect(() => {

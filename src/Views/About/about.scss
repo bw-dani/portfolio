@@ -21,7 +21,7 @@
     background: linear-gradient( 180deg, rgba(15, 14, 14) 0%, rgba(255, 255, 255, 0) 100%);
   }
   .about-info {
-    max-width: 90%;
+    max-width: 85%;
     @media (max-width: $breakpoint-tablet) {
       max-width: 100%;
       padding: 35% 0 10% 0;
@@ -29,7 +29,7 @@
     .title {
       font-size: 3rem;
       color: #fff;
-      transform: translateY(-90%);
+      transform: translateY(-55%);
       @media (max-width: $breakpoint-tablet) {
         font-size: 2rem;
       }
@@ -38,9 +38,11 @@
       max-width: 60%;
       color: #fff;
       text-align: left;
-      font-family: "ground castle";
+      font-family: "Secular One";
       font-size: 1.5rem;
+      font-weight: 900;
       letter-spacing: 1px;
+      user-select: none;
       @media (max-width: $breakpoint-tablet) {
         max-width: 100%;
         font-size: 1.2rem;
@@ -82,6 +84,7 @@
     }
     .about-image-text {
       transform: translate(-55%, 50%);
+      user-select: none;
       &.shake {
         animation: shake 0.5s ease-in-out infinite;
         svg {
