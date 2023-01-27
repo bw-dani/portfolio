@@ -12,11 +12,11 @@ export default function Contact(props) {
         </a>
       <div className="footer">
         <div className="icons">
-            <a href="https://www.linkedin.com/in/dani-broadwater/" target="_blank" rel="noopener noreferrer"><div className="linkedin"></div></a>
+            <a href="https://www.linkedin.com/in/danielle-broadwater/" target="_blank" rel="noopener noreferrer"><div className="linkedin"></div></a>
             <a href="https://github.com/bw-dani" target="_blank" rel="noopener noreferrer"><div className="github"></div>
           </a>
         </div>
-        <p className="footer-text">Dani Broadwater © 2020</p>
+        <p className="footer-text">Dani Broadwater © 2023</p>
         </div>
       </div>
     </div>

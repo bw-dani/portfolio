@@ -39,7 +39,7 @@
     );
   }
   .project-title {
-    font-family: 'Ground Castle';
+    font-family: "Ground Castle";
     font-size: 3rem;
     z-index: 2;
     @media (max-width: $breakpoint-tablet) {
@@ -47,7 +47,7 @@
     }
   }
   .project-description {
-    font-family: 'Secular One';
+    font-family: "Secular One";
     font-weight: 900;
     padding: 4% 20%;
     font-size: 1.6rem;
@@ -67,37 +67,106 @@
         text-decoration: line-through;
       }
     }
+    .client {
+      position: relative;
+      display: inline-block;
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 90%;
+        left: 100%;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-image: none;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: none;
+        border: 1.5px solid #fff;
+        animation: pulse 5s infinite;
+        @keyframes pulse {
+          0% {
+            transform: scale(0.95);
+            opacity: 0.5;
+          }
+          70% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(0.95);
+            opacity: 0.5;
+          }
+        }
+      }
+      &.trc {
+        &:hover:before {
+          background-image: url("./assets/3RC.gif");
+          display: block;
+        }
+      }
+      &.ast {
+        &:hover:before {
+          background-image: url("./assets/ast.gif");
+          display: block;
+        }
+      }
+      &.hrz {
+        &:hover:before {
+          background-image: url("./assets/horizon.gif");
+          display: block;
+        }
+      }
+      &.mntl {
+        &:hover:before {
+          background-image: url("./assets/mntl.gif");
+          display: block;
+        }
+      }
+      @media (max-width: $breakpoint-tablet) {
+        &.trc, &.ast, &.hrz, &.mntl {
+          &:hover:before {
+            display: none;
+          }
+        }
+      }
+    }
   }
 }
 
 .light {
-  .projects{
-  background-color: $heliotrope-gray;
-  color: #000;
-  &::before {
-    height: 65%;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.602) 0%,
-      rgba(255, 255, 255, 0) 45%
-    );
-  }
-  &::after {
-    height: 65%;
-    background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.793) 0%,
-      rgba(255, 255, 255, 0) 45%
-    );
-  }
-  .project-title {
+  .projects {
+    background-color: $heliotrope-gray;
     color: #000;
-  }
-  .project-description {
-    color: #000;
-    a {
+    &::before {
+      height: 65%;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.602) 0%,
+        rgba(255, 255, 255, 0) 45%
+      );
+    }
+    &::after {
+      height: 65%;
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.793) 0%,
+        rgba(255, 255, 255, 0) 45%
+      );
+    }
+    .project-title {
       color: #000;
     }
+    .project-description {
+      color: #000;
+      a {
+        color: #000;
+      }
+      .client {
+        &:before {
+          border: 1.5px solid #000;
+        }
+      }
+    }
   }
-}
 }
